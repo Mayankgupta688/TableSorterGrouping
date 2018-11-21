@@ -5,12 +5,13 @@ var http = require('http');
 var express = require('express');
 
 // Used as a templating engine
-var vash = require('vash');
+var ejs = require('ejs');
 
 // Express is initialized to carry ot routing process
 var app = express();
 
-app.set("view engine", "vash");
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
 app.use(express.static(__dirname + '/public'));
 

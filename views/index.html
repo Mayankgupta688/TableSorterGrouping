@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <base href="/"> 
+        <title>Column Configurator</title>
+        <link href="./styles/index.css" rel='stylesheet'/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.js"></script>
+    </head>
+    <body ng-app="testModule">
+        <link rel="stylesheet" href="./css/index.css" />
+        <div ng-controller="testController" class="column_configurator">
+            
+            <div class="layout_info">
+                <div>
+                    <p>Layout Name</p>
+                    <input type="text" ng-model="title" />
+                </div>
+                <div class="checkbox_input">
+                    <span><input type="checkbox" ng-model="isDefault"> Default Layout</span>
+                    <input type="checkbox" ng-model="isShared"> Shared
+                </div>
+            </div>
+            
+            <div class="result_page_info">
+                <div>
+                    <p>Result Per Page</p>
+                    <input type="text" ng-model="resultsPerPage" />
+                </div>
+            </div>
+
+            <div class="default_report">
+                <div>
+                    <p>Default Report</p>
+                    <select ng-model="defaultReport">
+                        <option value="accountDetailReport">Account Detail Report</option>
+                        <option value="otherDetailReport">Other Detail Report</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="define_columns">
+                <div class="available_columns">
+                    <p><b>Available Columns</b></p>
+                    <div class="available_column_details">
+                        <div ng-repeat="availableArr in availableArray" 
+                             ng-bind="availableArr.fieldName" 
+                             ng-class="availableArr.isSelected ? 'selectedColumn' : ''" 
+                             ng-click="selectedElement(availableArray[$index])"></div>
+                    </div>
+                </div>
+                <div class="movement-buttons">
+                    <p><b></b></p>
+                    <div class="column-button-container">
+                        <input type="button" value=">>" ng-click="moveAllToRequired()" />
+                        <input type="button" value=">" ng-click="moveColumnToRequired()" />
+                        <input type="button" value="<" ng-click="moveColumnToAvailable()" />
+                        <input type="button" value="<<" ng-click="moveAllToAvailable()" />
+                        <input type="button" style="transform: rotate(90deg);" value="<" ng-click="moveColumnsUp()"/>
+                        <input type="button" style="transform: rotate(90deg);" value=">" ng-click="moveColumnsDown()"/>
+                    </div>
+                </div>
+                <div class="required_column">
+                    <p><b>Required Columns</b></p>
+                    <div class="required_column_details">
+                            <div ng-repeat="reqArr in requiredArray" ng-bind="reqArr.fieldName"
+                                 ng-class="reqArr.isSelected ? 'selectedColumn' : ''" 
+                                 ng-click="selectedElement(requiredArray[$index])"></div>
+                    </div>
+                </div>
+                <div class="column_data">
+                    <p><b>Column Properties:</b></p>
+                    <div class="column_data_row">
+                        <p>Sort Order:</p>   
+                        <input type="number" ng-model="selectedColumnInfo.displayOrder" />
+                    </div>
+                    
+                    <div class="column_data_row">
+                        <p>Included in Search</p>   
+                        <input type="checkbox" ng-checked="selectedColumnInfo.includeInQuickSearch" />
+                    </div>
+
+                    <div class="column_data_row">
+                        <p>Sort Direction:</p>   
+                        <select ng-model="selectedColumnInfo.sortDirection">
+                            <option value="1">Ascending</option>
+                            <option value="0">Descending</option>
+                        </select>
+                    </div>
+
+                    <div class="column_data_row">
+                        <p>Text Justification:</p>   
+                        <select ng-model="selectedColumnInfo.textAlignment">
+                            <option value="right">Right</option>
+                            <option value="left">Left</option>
+                            <option value="center">Center</option>
+                        </select>
+                    </div>
+                       
+                </div>
+            </div><br><br>
+        
+            <div class="button-container">
+                <input type="button" value="Cancel" />
+                <input type="button" value="Delete" />
+                <input type="button" value="Save As" />
+                <input type="button" value="Save" ng-click="saveJsonData()" />
+            </div>
+        </div>
+
+
+        <script src="./scripts/index.js"></script>
+
+    </body>
+</html>

@@ -8,9 +8,10 @@
     "email": "mayankgupta688@gmail.com"
   },
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "~4.13.3",
     "mongodb": "^2.1.4",
-    "vash": "~0.11.0"
+    "vash": "^0.12.6"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
