@@ -46,7 +46,8 @@
                         <div ng-repeat="availableArr in availableArray" 
                              ng-bind="availableArr.fieldName" 
                              ng-class="availableArr.isSelected ? 'selectedColumn' : ''" 
-                             ng-click="selectedElement(availableArray[$index])"></div>
+                             ng-click="selectedElement(availableArray[$index])">
+                        </div>
                     </div>
                 </div>
                 <div class="movement-buttons">

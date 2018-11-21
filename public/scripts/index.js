@@ -21,16 +21,13 @@ testModule.controller("testController", function($scope, $http) {
         for(let i=0; i<responseData.data.fields.length; i++) {
             responseData.data.fields[i].isSelected = false;
             if(responseData.data.fields[i].visible == true) {
-                $scope.availableArray.push(responseData.data.fields[i]); 
+                $scope.requiredArray.push(responseData.data.fields[i]); 
             }
             else {
-                $scope.requiredArray.push(responseData.data.fields[i])
+                $scope.availableArray.push(responseData.data.fields[i])
             }
         }
     });
-    
-
-   
 
     $scope.selectedElement = function(refData) {
         for(let i=0; i<$scope.availableArray.length; i++){
