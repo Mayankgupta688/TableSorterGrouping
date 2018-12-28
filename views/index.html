@@ -15,42 +15,15 @@
         <script src="js/custom.js"></script>
     </head>
     <body>
-        <div class="createTable">
-            <table class="tablesorter" data-sortlist="[[4,1]]">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Priority</th>
-                        <th>Status</th>
-                        <th>Price</th>
-                        <th class="group-word">Order Data</th>
-                    </tr>
-                </thead>
-                <tbody>
-                
-                    <tr><td>Good Toys</td><td>USA</td><td>USA</td><td></td><td>USA</td></tr>
-                    <tr><td>Cycle Clearance</td><td>FRANCE</td><td>USA</td><td></td><td>UK</td></tr>
-                    <tr><td>Cycle Initial Bike Company</td><td>USA</td><td>USA</td><td></td><td>UK</td></tr>
-                    <tr><td>Sports Store</td><td>USA</td><td>USA</td><td></td><td>INDIA</td></tr>
-                    <tr><td>Locks Company</td><td>UK</td><td>USA</td><td></td><td>USA</td></tr>
-                    <tr><td>Famous Bike Shop</td><td>USA</td><td>USA</td><td></td><td>USA</td></tr>
-                    <tr><td>Good Toys</td><td>USA</td><td>USA</td><td></td><td>USA</td></tr>
-                    <tr><td>Cycle Clearance</td><td>FRANCE</td><td>USA</td><td></td><td>UK</td></tr>
-                    <tr><td>Cycle Initial Bike Company</td><td>USA</td><td>USA</td><td></td><td>UK</td></tr>
-                    <tr><td>Sports Store</td><td>USA</td><td>USA</td><td></td><td>INDIA</td></tr>
-                    <tr><td>Locks Company</td><td>UK</td><td>USA</td><td></td><td>USA</td></tr>
-                    <tr><td>Famous Bike Shop</td><td>USA</td><td>USA</td><td></td><td>USA</td></tr>
-                
-                </tbody>
-            </table>
-        </div>
         
+        <input type="text" value="4" class="groupingValue" style="margin-right: 20px;" />
+        <input type="button" onclick="updateTableSorter(2)" value="Click To Change Grouping" /><br><br>
+        
+        <div class="createTable">
+        </div><br><br>
+        
+        <input type="button" onclick="createTable()" value="Click To Change Grouping" /><br><br>
 
-        <input type="button" onclick="changeGrouping()" value="Click To Change Grouping" />
-
-        <script>
-            triggerTableSorter();
-        </script>
     </head>
     </body>
 </html>
