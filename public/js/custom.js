@@ -1,7 +1,7 @@
 var tableBody = (`
         <tbody>
             <tr><td>Good Toys</td><td>USA</td><td>France</td><td></td><td>USA</td></tr>
-            <tr><td>Cycle Clearance</td><td>FRANCE</td><td>Canade</td><td></td><td>UK</td></tr>
+            <tr><td>Cycle Clearance</td><td>FRANCE</td><td>Canada</td><td></td><td>UK</td></tr>
             <tr><td>Cycle Initial Bike Company</td><td>USA</td><td>USA</td><td></td><td>UK</td></tr>
             <tr><td>Sports Store</td><td>USA</td><td>Canada</td><td></td><td>INDIA</td></tr>
             <tr><td>Locks Company</td><td>UK</td><td>USA</td><td></td><td>USA</td></tr>
