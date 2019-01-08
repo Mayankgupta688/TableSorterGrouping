@@ -28,7 +28,8 @@ var tableHead = (`
 function triggerTableSorter() {
     $("table").tablesorter({
         theme : 'blue',
-        widgets: ['group', 'filter']
+        widgets: ['group', 'filter'],
+        sortList : [[2,0], [1,0],[3,0]]
     });
 }
 
@@ -38,8 +39,7 @@ function createTable() {
 
     var tableSorter = $("<table></table");
 
-    tableSorter.addClass("tablesorter").attr("data-sortlist", "[[" + sortColumnCount +", 1]]")
-        .append(tableBody).append(tableHead);
+    tableSorter.addClass("tablesorter").append(tableBody).append(tableHead);
 
     $(".createTable").append(tableSorter);
 
